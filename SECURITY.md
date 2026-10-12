@@ -16,6 +16,13 @@
 - O cliente de monitoramento só lê dados. Cada retomada direta tem um processo próprio, encerrado após conclusão, falha ou interrupção confirmada; desligar ou reconectar o monitoramento não encerra uma retomada em curso. Respostas ambíguas mantêm o processo até uma leitura confirmar inatividade, sem reenviar o turno.
 - O Sentinel não aprova solicitações, não altera planos e não garante que o texto enviado corresponda ao estado atual da tarefa. Revise as conversas retomadas.
 
+## Notificações
+
+Notificações são opcionais e podem incluir o título da conversa retomada.
+Esse título pode aparecer nas prévias da Central de Notificações e na tela
+bloqueada, conforme os ajustes do macOS. Desative prévias nos ajustes de
+Notificações ou mantenha as notificações do Sentinel desligadas se necessário.
+
 ## Persistência
 
 - O histórico local contém horário, nomes das janelas e percentuais de uso.

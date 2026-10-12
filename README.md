@@ -31,6 +31,7 @@ cd codex-sentinel
 
 A compilação local usa a arquitetura do seu Mac (Apple Silicon ou Intel).
 Downloads prontos, quando disponíveis, ficam em [Releases](https://github.com/paulopvm/codex-sentinel/releases).
+Baixe o ZIP, descompacte e mova `Codex Sentinel.app` para `~/Applications`.
 Confira a arquitetura e as notas de assinatura de cada versão. Apps sem assinatura
 podem ser bloqueados: após conferir a origem, use **Ajustes do Sistema → Privacidade
 e Segurança → Abrir Mesmo Assim**. Não é necessário desabilitar o Gatekeeper.

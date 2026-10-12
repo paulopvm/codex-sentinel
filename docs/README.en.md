@@ -15,7 +15,8 @@ Run `codex --version` and `command -v codex` in Terminal to check your installat
 
 Prebuilt downloads, when available, are listed under
 [Releases](https://github.com/paulopvm/codex-sentinel/releases). Read each release's
-architecture and signing notes. Unsigned downloads may be blocked by Gatekeeper;
+architecture and signing notes. Extract the ZIP and move `Codex Sentinel.app`
+to `~/Applications`. Unsigned downloads may be blocked by Gatekeeper;
 use macOS Privacy & Security's Open Anyway option only after verifying the source.
 Do not disable Gatekeeper. You can always build from source:
 
@@ -41,7 +42,8 @@ Open **Configurações** (Settings), set the full executable path returned by
 `command -v codex` if automatic discovery fails, and click **Atualizar** (Refresh).
 Leave **retomada automática** (automatic continuation) off until you understand
 its global scope: it applies to all eligible chats, including older chats outside
-the displayed retention period. Notifications and login launch are optional.
+the displayed retention period. Notifications and login launch are optional. Enabled notifications may expose
+chat titles in previews; see [SECURITY.md](../SECURITY.md).
 
 The documented App Server over stdio provides monitoring and direct continuation.
 When the desktop owns a chat, continuation may use its internal, versioned local
