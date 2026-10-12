@@ -1,0 +1,30 @@
+name: Bug / Problema
+description: Report a reproducible problem / Relate um problema reproduzível
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: "Português e inglês são bem-vindos. Remova tokens, prompts, títulos e IDs pessoais. Para vulnerabilidades, use SECURITY.md."
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment / Ambiente
+      description: Sentinel version, macOS version, Apple Silicon or Intel, and codex --version
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce / Passos para reproduzir
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and actual behavior / Comportamento esperado e observado
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Sanitized error / Erro sem dados pessoais

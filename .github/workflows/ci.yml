@@ -1,0 +1,36 @@
+name: macOS checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  checks:
+    runs-on: macos-15
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Toolchain
+        run: |
+          swift --version
+          python3 --version
+      - name: Offline regression checks
+        run: ./scripts/test-models.sh
+      - name: Build app
+        run: ./scripts/build-app.sh
+      - name: Validate bundle metadata
+        run: plutil -lint Info.plist "dist/Codex Sentinel.app/Contents/Info.plist"
+      - name: Package universal app
+        run: ./scripts/package-release.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Codex-Sentinel-universal
+          path: |
+            dist/Codex-Sentinel-*-universal.zip
+            dist/Codex-Sentinel-*-universal.zip.sha256
+          if-no-files-found: error

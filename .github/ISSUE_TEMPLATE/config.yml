@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Security / Segurança
+    url: https://github.com/paulopvm/codex-sentinel/security/policy
+    about: Read the private vulnerability reporting instructions first.
