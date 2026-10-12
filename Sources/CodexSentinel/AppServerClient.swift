@@ -100,7 +100,13 @@ actor AppServerClient {
         // can deliver fragments out of order and silently corrupt large JSON responses.
         outputReadTask = Task.detached { [weak self] in
             while !Task.isCancelled {
-                let data = readHandle.availableData
+                // Pipe reads block until bytes arrive. Keep them off Swift's cooperative
+                // executor so idle readers cannot starve requests or writer cleanup.
+                let data: Data = await withCheckedContinuation { continuation in
+                    DispatchQueue.global(qos: .utility).async {
+                        continuation.resume(returning: readHandle.availableData)
+                    }
+                }
                 guard !data.isEmpty else { break }
                 await self?.receive(data, connectionID: generation)
             }

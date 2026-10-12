@@ -18,4 +18,4 @@ python3 Tests/Fixtures/check-desktop-ipc.py .build/model-checks/DesktopIPCChecks
 swiftc Sources/CodexSentinel/Models.swift Sources/CodexSentinel/AppServerClient.swift Sources/CodexSentinel/DesktopIPCClient.swift Tests/FragmentedChecks.swift -o .build/model-checks/FragmentedChecks
 .build/model-checks/FragmentedChecks "$ROOT/Tests/Fixtures/fake-fragmented-codex.py"
 swiftc Sources/CodexSentinel/Models.swift Sources/CodexSentinel/AppServerClient.swift Sources/CodexSentinel/DesktopIPCClient.swift Tests/WriterReleaseChecks.swift -o .build/model-checks/WriterReleaseChecks
-.build/model-checks/WriterReleaseChecks "$ROOT/Tests/Fixtures/fake-writer-codex.py"
+python3 Tests/Fixtures/check-cooperative-pool.py .build/model-checks/WriterReleaseChecks "$ROOT/Tests/Fixtures/fake-writer-codex.py"
